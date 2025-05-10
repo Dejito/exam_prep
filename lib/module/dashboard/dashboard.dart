@@ -1,3 +1,4 @@
+import 'package:exam_prep/module/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
@@ -11,7 +12,11 @@ class Dashboard extends StatelessWidget {
       backgroundColor: const Color(0xFF79F3A1),
       appBar: AppBar(
         backgroundColor: const Color(0xFF79F3A1),
-        title: const Text("Hello,\nAlexandra!"),
+        title: titleText(
+          text: "Hello,\nAlexandra!",
+          fontSize: 16,
+          fontWeight: FontWeight.w500
+        ),
         actions: [
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.25,
@@ -80,8 +85,20 @@ class Dashboard extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
-          child:  Column(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              titleText(
+                text: "Social Studies",
+                fontSize: 40,
+                fontWeight: FontWeight.bold
+              ),
+              titleText(
+                  text: "Exam Preparation",
+                  fontSize: 40,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold
+              ),
 
             ],
           ),
