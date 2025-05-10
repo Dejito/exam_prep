@@ -11,10 +11,7 @@ class Dashboard extends StatelessWidget {
       backgroundColor: const Color(0xFF79F3A1),
       appBar: AppBar(
         backgroundColor: const Color(0xFF79F3A1),
-
-        title: const Text(
-            "Hello,\nAlexandra!"
-        ),
+        title: const Text("Hello,\nAlexandra!"),
         actions: [
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.25,
@@ -25,7 +22,8 @@ class Dashboard extends StatelessWidget {
                   left: 8,
                   child: CircleAvatar(
                     radius: 25,
-                    backgroundImage: AssetImage(AppImages.userImage), // Or use NetworkImage
+                    backgroundImage:
+                        AssetImage(AppImages.userImage), // Or use NetworkImage
                   ),
                 ),
                 Container(
@@ -45,12 +43,49 @@ class Dashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
-          Container(width: 20,)
+          Container(
+            width: 20,
+          )
         ],
+      ),
+      floatingActionButton: Row(
+        // mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          FloatingActionButton(
+            heroTag: 'btn1',
+            onPressed: () {
+              // First action
+            },
+            child: const Icon(
+              Icons.add,
+            ),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            heroTag: 'btn2',
+            onPressed: () {
+              // Second action
+            },
+            child: const Icon(
+              Icons.edit,
+            ),
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child:  Column(
+            children: [
+
+            ],
+          ),
+        ),
       ),
     );
   }
