@@ -17,14 +17,17 @@ Widget titleText(
     ) {
   return Padding(
     padding: EdgeInsets.only(
-        top: topPadding.h,
-        bottom: bottomPadding.h,
-        right: startPadding.w,
-        left: endPadding.w),
+        top: topPadding,
+        bottom: bottomPadding,
+        right: startPadding,
+        left: endPadding),
     child: Text(
       text,
       style: TextStyle(
-
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+          color: color,
+          fontStyle: fontStyle
       ),
       textAlign: textAlign,
       overflow: TextOverflow.fade,
