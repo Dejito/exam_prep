@@ -1,3 +1,4 @@
+import 'package:exam_prep/module/dashboard/dashboard_widgets.dart';
 import 'package:exam_prep/module/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -88,17 +89,7 @@ class Dashboard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              titleText(
-                text: "Social Studies",
-                fontSize: 40,
-                fontWeight: FontWeight.bold
-              ),
-              titleText(
-                  text: "Exam Preparation",
-                  fontSize: 40,
-                  color: Colors.black54,
-                  fontWeight: FontWeight.bold
-              ),
+              subjectOfferedWidget(subject: "Social Studies")
 
             ],
           ),

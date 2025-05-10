@@ -1,4 +1,6 @@
-//
+import 'package:flutter/material.dart';
+import '../widgets.dart';
+
 //
 // import 'package:flutter/cupertino.dart';
 //
@@ -24,3 +26,23 @@
 //     ],
 //   );
 // }
+
+
+
+Widget subjectOfferedWidget({required String subject}) {
+  return Column(
+    children: [
+      titleText(
+          text: subject,
+          fontSize: 40,
+          fontWeight: FontWeight.bold
+      ),
+      titleText(
+          text: "Exam Preparation",
+          fontSize: 40,
+          color: Colors.black54,
+          fontWeight: FontWeight.bold
+      ),
+    ],
+  )
+}
