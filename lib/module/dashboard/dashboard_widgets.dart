@@ -1,9 +1,42 @@
 import 'package:flutter/material.dart';
 import '../widgets.dart';
 
-//
-// import 'package:flutter/cupertino.dart';
-//
+
+Widget subjectOfferedWidget({required String subject}) {
+  return Column(
+    children: [
+      titleText(
+          text: subject,
+          fontSize: 40,
+          fontWeight: FontWeight.bold
+      ),
+      titleText(
+          text: "Exam Preparation",
+          fontSize: 40,
+          color: Colors.black54,
+          fontWeight: FontWeight.bold
+      ),
+    ],
+  );
+}
+
+Widget scoreBoard() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: <Widget>[
+    Expanded(
+      child: Column(
+
+      ),
+      ),
+      const SizedBox(width: 16.0),
+      Expanded(
+
+      ),
+    ],
+  );
+}
+
 // Widget actionCard() {
 //   return Row(
 //     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -26,23 +59,3 @@ import '../widgets.dart';
 //     ],
 //   );
 // }
-
-
-
-Widget subjectOfferedWidget({required String subject}) {
-  return Column(
-    children: [
-      titleText(
-          text: subject,
-          fontSize: 40,
-          fontWeight: FontWeight.bold
-      ),
-      titleText(
-          text: "Exam Preparation",
-          fontSize: 40,
-          color: Colors.black54,
-          fontWeight: FontWeight.bold
-      ),
-    ],
-  )
-}
