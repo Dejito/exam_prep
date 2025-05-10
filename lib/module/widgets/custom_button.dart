@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets.dart';
-
 
 Widget customButton({
   required String text,
@@ -12,19 +12,31 @@ Widget customButton({
   return InkWell(
     onTap: onClick,
     child: Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(24)),
+        borderRadius: const BorderRadius.all(Radius.circular(50)),
         color: buttonColor,
       ),
-      child: Align(
-        alignment: Alignment.center,
-        child: titleText(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          titleText(
             text: text,
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
             color: textColor,
-            textAlign: TextAlign.justify),
+            textAlign: TextAlign.justify,
+          ),
+          // SizedBox(
+          //   width: 2,
+          // ),
+          Icon(
+            CupertinoIcons.arrow_up_right,
+            color: Colors.white,
+            size: 20,
+          )
+        ],
       ),
     ),
   );
