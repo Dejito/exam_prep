@@ -14,10 +14,9 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF79F3A1),
         title: titleText(
-          text: "Hello,\nAlexandra!",
-          fontSize: 16,
-          fontWeight: FontWeight.w500
-        ),
+            text: "Hello,\nAlexandra!",
+            fontSize: 16,
+            fontWeight: FontWeight.w500),
         actions: [
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.25,
@@ -89,8 +88,11 @@ class Dashboard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              subjectOfferedWidget(subject: "Social Studies")
-
+              subjectOfferedWidget(subject: "Social Studies"),
+              const SizedBox(
+                height: 20,
+              ),
+              scoreBoard(score: 58),
             ],
           ),
         ),

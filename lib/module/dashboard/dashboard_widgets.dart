@@ -1,9 +1,11 @@
+import 'package:exam_prep/module/widgets/custom_button.dart';
 import 'package:exam_prep/module/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
 import '../widgets.dart';
 
 Widget subjectOfferedWidget({required String subject}) {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       titleText(text: subject, fontSize: 40, fontWeight: FontWeight.bold),
       titleText(
@@ -17,7 +19,7 @@ Widget subjectOfferedWidget({required String subject}) {
 
 Widget scoreBoard({required int score}) {
   return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: <Widget>[
       Expanded(
         child: Column(
@@ -26,6 +28,8 @@ Widget scoreBoard({required int score}) {
               unformattedText: score.toString(),
               formattedText: " /100",
               formattedColor: Colors.black54,
+              formattedFontSize: 30,
+              unformattedFontSize: 30
             ),
             titleText(
               text: "Your recent score",
@@ -35,8 +39,14 @@ Widget scoreBoard({required int score}) {
         ),
       ),
       const SizedBox(width: 16.0),
-      Expanded(ch),
+      Expanded(
+        child: customButton(
+          text: "More Details",
+          textColor: Colors.white,
+          buttonColor: Colors.black,
+          onClick: (){},
+        ),
+      ),
     ],
   );
 }
-
