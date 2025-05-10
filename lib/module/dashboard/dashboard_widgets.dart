@@ -23,17 +23,21 @@ Widget scoreBoard({required int score}) {
     children: <Widget>[
       Expanded(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             richText(
               unformattedText: score.toString(),
               formattedText: " /100",
               formattedColor: Colors.black54,
-              formattedFontSize: 30,
-              unformattedFontSize: 30
+              fontWeight: FontWeight.w700,
+              formattedFontSize: 28,
+              unformattedFontSize: 35
             ),
             titleText(
               text: "Your recent score",
-              color: Colors.black54,
+              color: Colors.black87,
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
             )
           ],
         ),

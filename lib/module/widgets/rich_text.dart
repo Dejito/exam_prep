@@ -12,7 +12,7 @@ Widget richText({
   FontWeight fontWeight = FontWeight.normal
   }) {
   return RichText(
-    textAlign: TextAlign.center,
+    textAlign: TextAlign.start,
     text: TextSpan(
       text: unformattedText,
       style: TextStyle(
