@@ -1,61 +1,42 @@
+import 'package:exam_prep/module/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
 import '../widgets.dart';
-
 
 Widget subjectOfferedWidget({required String subject}) {
   return Column(
     children: [
-      titleText(
-          text: subject,
-          fontSize: 40,
-          fontWeight: FontWeight.bold
-      ),
+      titleText(text: subject, fontSize: 40, fontWeight: FontWeight.bold),
       titleText(
           text: "Exam Preparation",
           fontSize: 40,
           color: Colors.black54,
-          fontWeight: FontWeight.bold
-      ),
+          fontWeight: FontWeight.bold),
     ],
   );
 }
 
-Widget scoreBoard() {
+Widget scoreBoard({required int score}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: <Widget>[
-    Expanded(
-      child: Column(
-
-      ),
+      Expanded(
+        child: Column(
+          children: [
+            richText(
+              unformattedText: score.toString(),
+              formattedText: " /100",
+              formattedColor: Colors.black54,
+            ),
+            titleText(
+              text: "Your recent score",
+              color: Colors.black54,
+            )
+          ],
+        ),
       ),
       const SizedBox(width: 16.0),
-      Expanded(
-
-      ),
+      Expanded(ch),
     ],
   );
 }
 
-// Widget actionCard() {
-//   return Row(
-//     mainAxisAlignment: MainAxisAlignment.spaceAround,
-//     children: <Widget>[
-//       Expanded(
-//         child: actionCardItem(
-//             text: "Trade \nGift Card",
-//             icon: AppIcons.tradeGiftCard,
-//             onTap: () {
-//               NavHelper.navToRedeemGiftCard();
-//             }),
-//       ),
-//       const SizedBox(width: 16.0),
-//       Expanded(
-//         child: actionCardItem(
-//             text: "Check Active \nRates",
-//             icon: AppIcons.checkActiveRates,
-//             onTap: () {}),
-//       ),
-//     ],
-//   );
-// }
