@@ -133,8 +133,8 @@ class _TabScreensState extends State<TabScreens> {
   }
 }
 
-Widget actBut() {
-  return    FloatingActionButton.extended(
+Widget bottomNavButton() {
+  return FloatingActionButton.extended(
     heroTag: 'button2',
     onPressed: () {
       setState(() {
