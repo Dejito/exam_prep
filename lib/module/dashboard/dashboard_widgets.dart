@@ -56,8 +56,9 @@ Widget scoreBoard({required int score}) {
 }
 
 
-Widget subjectOverviewCard({
-  required String text,
+Widget subjectOverviewCardItem({
+  required String formattedColorText,
+  required String unformattedColorText,
   required IconData icon,
   required double size,
   required Function() onTap,
@@ -75,17 +76,19 @@ Widget subjectOverviewCard({
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+        children: [
           Icon(
             icon,
             size: size,
           ),
           const SizedBox(height: 12.0),
-          titleText(
-            text: text,
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            textAlign: TextAlign.center,
+          richText(
+              unformattedText: unformattedColorText,
+              formattedText: formattedColorText,
+              formattedColor: Colors.black54,
+              fontWeight: FontWeight.w700,
+              formattedFontSize: 28,
+              unformattedFontSize: 35
           ),
         ],
       ),
