@@ -3,18 +3,34 @@ import 'package:exam_prep/module/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
 import '../widgets.dart';
 
-Widget subjectOfferedWidget({required String subject}) {
+Widget subjectOfferedWidget({
+  required String subject,
+  bool isDashboardScreen = true,
+  Color topTextColor = Colors.black,
+}) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16.0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        titleText(text: subject, fontSize: 40, fontWeight: FontWeight.bold),
         titleText(
-            text: "Exam Preparation",
-            fontSize: 40,
-            color: Colors.black54,
-            fontWeight: FontWeight.bold),
+          text: subject,
+          fontSize: 40,
+          fontWeight: FontWeight.w600,
+          textAlign: TextAlign.start,
+          color: topTextColor,
+        ),
+        Row(
+          children: [
+            titleText(
+              text: "Exam Preparation",
+              fontSize: 40,
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
+            ),
+            if (!isDashboardScreen) const Icon(Icons.keyboard_arrow_down)
+          ],
+        ),
       ],
     ),
   );
@@ -147,9 +163,9 @@ Widget testSummaryCard() {
             Row(
               children: [
                 richText(
-                    unformattedText: '3',
-                    formattedText: 'h',
-                    unformattedFontSize: 30,
+                  unformattedText: '3',
+                  formattedText: 'h',
+                  unformattedFontSize: 30,
                   fontWeight: FontWeight.w500,
                   formattedColor: Colors.grey,
                 ),
@@ -163,7 +179,6 @@ Widget testSummaryCard() {
               ],
             ),
             titleText(text: "Overall Time Spent")
-
           ],
         ),
         Row(
@@ -179,7 +194,6 @@ Widget testSummaryCard() {
               formattedColor: Colors.grey,
             ),
             titleText(text: "Variants Solved")
-
           ],
         ),
         Row(
@@ -187,11 +201,8 @@ Widget testSummaryCard() {
           crossAxisAlignment: CrossAxisAlignment.baseline,
           textBaseline: TextBaseline.alphabetic,
           children: [
-            titleText(text: "28", fontSize: 30,
-            fontWeight: FontWeight.w500),
-
+            titleText(text: "28", fontSize: 30, fontWeight: FontWeight.w500),
             titleText(text: "Mistakes made")
-
           ],
         ),
       ],
@@ -210,10 +221,8 @@ Widget subjectsListView() {
           onTap: () {},
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: titleText(text: subject[i],
-            fontSize: 15,
-              color: Colors.grey.shade500
-            ),
+            child: titleText(
+                text: subject[i], fontSize: 15, color: Colors.grey.shade500),
           ),
         );
       },
