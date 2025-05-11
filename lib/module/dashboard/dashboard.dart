@@ -57,41 +57,6 @@ class Dashboard extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: Row(
-        // mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          FloatingActionButton(
-            heroTag: 'btn1',
-            onPressed: () {
-              // First action
-            },
-            child: const Icon(
-              Icons.add,
-            ),
-          ),
-          const SizedBox(height: 10),
-          FloatingActionButton(
-            heroTag: 'btn2',
-            onPressed: () {
-              // Second action
-            },
-            child: const Icon(
-              Icons.edit,
-            ),
-          ),
-          FloatingActionButton(
-            heroTag: 'btn2',
-            onPressed: () {
-              // Second action
-            },
-            child: const Icon(
-              Icons.edit,
-            ),
-          ),
-        ],
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(8),
@@ -110,7 +75,11 @@ class Dashboard extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              testSummaryCard()
+              testSummaryCard(),
+              const SizedBox(
+                height: 15,
+              ),
+
             ],
           ),
         ),
