@@ -5,8 +5,16 @@ import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
+
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,30 +71,42 @@ class Dashboard extends StatelessWidget {
         child: SizedBox(height: 0),
       ),
       floatingActionButton: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.65,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             FloatingActionButton.extended(
               heroTag: 'button1',
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  selectedIndex = 0;
+                });
+              },
               backgroundColor: Colors.black,
               icon: const Icon(CupertinoIcons.home, color: Colors.white),
-              label: titleText(text: "Home", color: Colors.white),
+              label: titleText(text: selectedIndex == 0 ? "Home" : "", color: Colors.white),
             ),
             FloatingActionButton.extended(
               heroTag: 'button2',
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  // selectedIndex = 1;
+                });
+              },
               backgroundColor: Colors.black,
               icon: const Icon(Icons.school_outlined, color: Colors.white),
               label: titleText(text: "", color: Colors.white),
             ),
             FloatingActionButton.extended(
               heroTag: 'button2',
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  selectedIndex = 2;
+                });
+              },
               backgroundColor: Colors.black,
               icon: const Icon(Icons.article_outlined, color: Colors.white),
-              label: titleText(text: "", color: Colors.white),
+              label: titleText(text: selectedIndex == 2 ? "Practice" : "", color: Colors.white),
             ),
           ],
         ),
