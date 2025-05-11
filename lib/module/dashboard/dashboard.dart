@@ -83,7 +83,7 @@ class _DashboardState extends State<Dashboard> {
                 });
               },
               backgroundColor: Colors.black,
-              icon: const Icon(CupertinoIcons.home, color: Colors.white),
+              icon: const Icon(Icons.home_outlined, color: Colors.white),
               label: titleText(text: selectedIndex == 0 ? "Home" : "", color: Colors.white),
             ),
             FloatingActionButton.extended(
