@@ -110,32 +110,31 @@ class _TabScreensState extends State<TabScreens> {
               ),
 
               bottomNavButton(
-                heroTag: 'button1',
+                heroTag: 'button3',
                 backgroundColor:
                 selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
-                icon: Icons.home_outlined,
-                text: selectedIndex == 0 ? "Home" : "",
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 0;
-                  });
-                },
-              ),
-
-              FloatingActionButton.extended(
-                heroTag: 'button2',
+                icon: Icons.article_outlined,
+                text: selectedIndex == 2 ? "Practice" : "",
                 onPressed: () {
                   setState(() {
                     selectedIndex = 2;
                   });
                 },
-                backgroundColor:
-                    selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
-                icon: const Icon(Icons.article_outlined, color: Colors.white),
-                label: titleText(
-                    text: selectedIndex == 2 ? "Practice" : "",
-                    color: Colors.white),
               ),
+
+              // FloatingActionButton.extended(
+              //   heroTag: 'button2',
+              //   onPressed: () {
+              //     setState(() {
+              //       selectedIndex = 2;
+              //     });
+              //   },
+              //   backgroundColor:
+              //       selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+              //   icon: const Icon(Icons.article_outlined, color: Colors.white),
+              //   label: titleText(
+              //       color: Colors.white),
+              // ),
             ],
           ),
         ),
