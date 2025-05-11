@@ -84,7 +84,7 @@ class Dashboard extends StatelessWidget {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -93,6 +93,10 @@ class Dashboard extends StatelessWidget {
                 height: 20,
               ),
               scoreBoard(score: 58),
+              const SizedBox(
+                height: 20,
+              ),
+              subjectOverviewCard(),
             ],
           ),
         ),
