@@ -1,4 +1,5 @@
 import 'package:exam_prep/module/dashboard/dashboard.dart';
+import 'package:exam_prep/module/tab_screens.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Dashboard()
+      home: const TabScreens()
     );
   }
 }
