@@ -25,8 +25,11 @@ class _PracticeScreenState extends State<PracticeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               subjectOfferedWidget(
-                subject: "Challenge your knowledge",
+                topText: "Challenge your knowledge",
+                bottomText: "type of question",
                 topTextColor: Colors.white,
+                bottomTextColor: Colors.grey,
+                bottomFontSize: 30,
                 isDashboardScreen: false
               )
             ],

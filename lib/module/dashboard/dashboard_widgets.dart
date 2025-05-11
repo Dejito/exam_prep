@@ -1,12 +1,16 @@
 import 'package:exam_prep/module/widgets/custom_button.dart';
 import 'package:exam_prep/module/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
+import '../../models/subjects_model.dart';
 import '../widgets.dart';
 
 Widget subjectOfferedWidget({
-  required String subject,
+  required String topText,
+  String bottomText = "Exam Preparation",
   bool isDashboardScreen = true,
   Color topTextColor = Colors.black,
+  double bottomFontSize = 40,
+  Color bottomTextColor = Colors.black54,
 }) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -14,21 +18,29 @@ Widget subjectOfferedWidget({
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         titleText(
-          text: subject,
+          text: topText,
           fontSize: 40,
           fontWeight: FontWeight.w600,
           textAlign: TextAlign.start,
           color: topTextColor,
         ),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
           children: [
             titleText(
-              text: "Exam Preparation",
-              fontSize: 40,
-              color: Colors.black54,
-              fontWeight: FontWeight.bold,
+              text: bottomText,
+                fontSize: bottomFontSize,
+                color: bottomTextColor,
+                fontWeight: FontWeight.bold,
+              // bottomPadding: 12
             ),
-            if (!isDashboardScreen) const Icon(Icons.keyboard_arrow_down)
+            if (!isDashboardScreen)
+              const Icon(
+                Icons.keyboard_arrow_down,
+                size: 30,
+                color: Colors.grey,
+              )
           ],
         ),
       ],
@@ -230,12 +242,3 @@ Widget subjectsListView() {
   );
 }
 
-final List<String> subject = [
-  "Social Studies",
-  "Econs",
-  "Math",
-  "English",
-  "Biology",
-  "Physics",
-  "Chemistry"
-];
