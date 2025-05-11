@@ -1,5 +1,6 @@
 import 'package:exam_prep/module/dashboard/dashboard_widgets.dart';
 import 'package:exam_prep/module/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
@@ -57,6 +58,40 @@ class Dashboard extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.transparent,
+        child: SizedBox(height: 0),
+      ),
+      floatingActionButton: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.6,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            FloatingActionButton.extended(
+              heroTag: 'button1',
+              onPressed: () {},
+              backgroundColor: Colors.black,
+              icon: const Icon(CupertinoIcons.home, color: Colors.white),
+              label: titleText(text: "Home", color: Colors.white),
+            ),
+            FloatingActionButton.extended(
+              heroTag: 'button2',
+              onPressed: () {},
+              backgroundColor: Colors.black,
+              icon: const Icon(Icons.school_outlined, color: Colors.white),
+              label: titleText(text: "", color: Colors.white),
+            ),
+            FloatingActionButton.extended(
+              heroTag: 'button2',
+              onPressed: () {},
+              backgroundColor: Colors.black,
+              icon: const Icon(Icons.article_outlined, color: Colors.white),
+              label: titleText(text: "", color: Colors.white),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(8),
@@ -64,22 +99,12 @@ class Dashboard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               subjectOfferedWidget(subject: "Social Studies"),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               scoreBoard(score: 58),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               subjectOverviewCard(),
-              const SizedBox(
-                height: 15,
-              ),
-              testSummaryCard(),
-              const SizedBox(
-                height: 15,
-              ),
-
+              const SizedBox(height: 15),
+              testSummaryCard()
             ],
           ),
         ),
