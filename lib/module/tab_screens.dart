@@ -58,9 +58,8 @@ class _TabScreensState extends State<TabScreens> {
                       child: IconButton(
                         icon: Icon(
                           Icons.apps,
-                          color: selectedIndex == 0
-                              ? Colors.black
-                              : Colors.white,
+                          color:
+                              selectedIndex == 0 ? Colors.black : Colors.white,
                         ),
                         onPressed: () {
                           // Handle press
@@ -133,19 +132,21 @@ class _TabScreensState extends State<TabScreens> {
   }
 }
 
-Widget bottomNavButton() {
+Widget bottomNavButton(
+    {required String heroTag,
+    required Color backgroundColor,
+    required Icon icon,
+    required String text,
+    required Color textColor,
+    required Function() onPressed}) {
   return FloatingActionButton.extended(
-    heroTag: 'button2',
-    onPressed: () {
-      setState(() {
-        selectedIndex = 2;
-      });
-    },
-    backgroundColor:
-    selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+    heroTag: heroTag,
+    onPressed: onPressed,
+    backgroundColor: backgroundColor,
     icon: const Icon(Icons.article_outlined, color: Colors.white),
     label: titleText(
-        text: selectedIndex == 2 ? "Practice" : "",
-        color: Colors.white),
+      text: text,
+      color: textColor,
+    ),
   );
 }
