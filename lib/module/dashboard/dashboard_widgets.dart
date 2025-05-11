@@ -26,13 +26,12 @@ Widget scoreBoard({required int score}) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             richText(
-              unformattedText: score.toString(),
-              formattedText: " /100",
-              formattedColor: Colors.black54,
-              fontWeight: FontWeight.w700,
-              formattedFontSize: 28,
-              unformattedFontSize: 35
-            ),
+                unformattedText: score.toString(),
+                formattedText: " /100",
+                formattedColor: Colors.black54,
+                fontWeight: FontWeight.w700,
+                formattedFontSize: 28,
+                unformattedFontSize: 35),
             titleText(
               text: "Your recent score",
               color: Colors.black54,
@@ -48,19 +47,45 @@ Widget scoreBoard({required int score}) {
           text: "More Details",
           textColor: Colors.white,
           buttonColor: Colors.black,
-          onClick: (){},
+          onClick: () {},
         ),
       ),
     ],
   );
 }
 
+Widget subjectOverviewCard() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: <Widget>[
+      Expanded(
+        child: subjectOverviewCardItem(
+          formattedColorText: "/5 topics",
+          unformattedColorText: "3",
+          icon: Icons.school_outlined,
+          // size: size,
+          onTap: (){},
+        ),
+      ),
+      const SizedBox(width: 16.0),
+      Expanded(
+        child: subjectOverviewCardItem(
+          formattedColorText: "/5 topics",
+          unformattedColorText: "3",
+          icon: Icons.school_outlined,
+          // size: size,
+          onTap: (){},
+        ),
+      ),
+    ],
+  );
+}
 
 Widget subjectOverviewCardItem({
   required String formattedColorText,
   required String unformattedColorText,
   required IconData icon,
-  required double size,
+  double size = 30,
   required Function() onTap,
 }) {
   return InkWell(
@@ -83,12 +108,12 @@ Widget subjectOverviewCardItem({
           ),
           const SizedBox(height: 12.0),
           richText(
-              unformattedText: unformattedColorText,
-              formattedText: formattedColorText,
-              formattedColor: Colors.black54,
-              fontWeight: FontWeight.w700,
-              formattedFontSize: 28,
-              unformattedFontSize: 35
+            unformattedText: unformattedColorText,
+            formattedText: formattedColorText,
+            formattedColor: Colors.black54,
+            fontWeight: FontWeight.w700,
+            formattedFontSize: 28,
+            unformattedFontSize: 35,
           ),
         ],
       ),
