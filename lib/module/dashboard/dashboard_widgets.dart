@@ -131,16 +131,71 @@ Widget subjectOverviewCardItem({
 
 Widget testSummaryCard() {
   return Container(
-    height: 160,
     padding: const EdgeInsets.all(16.0),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(25.0),
-      // border: Border.all(color: const Color(0xFFFFD739), width: 1),
     ),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [],
+      children: [
+        subjectsListView(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+          children: [
+            Row(
+              children: [
+                richText(
+                    unformattedText: '3',
+                    formattedText: 'h',
+                    unformattedFontSize: 30,
+                    formattedColor: Colors.grey,
+                ),
+                richText(
+                  unformattedText: '17',
+                  formattedText: 'min',
+                  unformattedFontSize: 30,
+                  formattedColor: Colors.grey,
+                ),
+              ],
+            ),
+            titleText(text: "Overall Time Spent")
+
+          ],
+        )
+      ],
     ),
   );
 }
+
+Widget subjectsListView() {
+  return SizedBox(
+    height: 50,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: subject.length,
+      itemBuilder: (context, i) {
+        return GestureDetector(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: titleText(text: subject[i],
+            fontSize: 15,
+              color: Colors.grey.shade500
+            ),
+          ),
+        );
+      },
+    ),
+  );
+}
+
+final List<String> subject = [
+  "Social Studies",
+  "Econs",
+  "Math",
+  "English",
+  "Biology",
+  "Physics",
+  "Chemistry"
+];
