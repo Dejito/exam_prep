@@ -131,7 +131,7 @@ Widget subjectOverviewCardItem({
 
 Widget testSummaryCard() {
   return Container(
-    padding: const EdgeInsets.all(16.0),
+    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(25.0),
@@ -141,7 +141,8 @@ Widget testSummaryCard() {
         subjectsListView(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
           children: [
             Row(
               children: [
@@ -149,12 +150,14 @@ Widget testSummaryCard() {
                     unformattedText: '3',
                     formattedText: 'h',
                     unformattedFontSize: 30,
-                    formattedColor: Colors.grey,
+                  fontWeight: FontWeight.w500,
+                  formattedColor: Colors.grey,
                 ),
                 richText(
                   unformattedText: '17',
                   formattedText: 'min',
                   unformattedFontSize: 30,
+                  fontWeight: FontWeight.w500,
                   formattedColor: Colors.grey,
                 ),
               ],
@@ -162,7 +165,35 @@ Widget testSummaryCard() {
             titleText(text: "Overall Time Spent")
 
           ],
-        )
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            richText(
+              unformattedText: '6 ',
+              formattedText: '/20h',
+              unformattedFontSize: 30,
+              fontWeight: FontWeight.w500,
+              formattedColor: Colors.grey,
+            ),
+            titleText(text: "Variants Solved")
+
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            titleText(text: "28", fontSize: 30,
+            fontWeight: FontWeight.w500),
+
+            titleText(text: "Mistakes made")
+
+          ],
+        ),
       ],
     ),
   );

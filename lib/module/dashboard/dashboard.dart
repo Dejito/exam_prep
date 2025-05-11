@@ -16,6 +16,7 @@ class Dashboard extends StatelessWidget {
         title: titleText(
             text: "Hello,\nAlexandra!",
             fontSize: 16,
+            startPadding: 12,
             fontWeight: FontWeight.w500),
         actions: [
           SizedBox(
@@ -80,6 +81,15 @@ class Dashboard extends StatelessWidget {
               Icons.edit,
             ),
           ),
+          FloatingActionButton(
+            heroTag: 'btn2',
+            onPressed: () {
+              // Second action
+            },
+            child: const Icon(
+              Icons.edit,
+            ),
+          ),
         ],
       ),
       body: SafeArea(
@@ -97,6 +107,10 @@ class Dashboard extends StatelessWidget {
                 height: 20,
               ),
               subjectOverviewCard(),
+              const SizedBox(
+                height: 15,
+              ),
+              testSummaryCard()
             ],
           ),
         ),
