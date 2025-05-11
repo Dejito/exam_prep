@@ -1,5 +1,5 @@
 import 'package:exam_prep/module/dashboard/dashboard.dart';
-import 'package:exam_prep/module/tab_screens.dart';
+import 'package:exam_prep/module/tab_screens/tab_screens.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,9 +1,10 @@
 import 'package:exam_prep/module/dashboard/dashboard.dart';
 import 'package:exam_prep/module/exam_practise/practice.dart';
+import 'package:exam_prep/module/tab_screens/tab_screens_widget.dart';
 import 'package:exam_prep/module/widgets.dart';
 import 'package:flutter/material.dart';
 
-import '../constant/app_assets.dart';
+import '../../constant/app_assets.dart';
 
 class TabScreens extends StatefulWidget {
   const TabScreens({super.key});
@@ -84,19 +85,18 @@ class _TabScreensState extends State<TabScreens> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              FloatingActionButton.extended(
+              bottomNavButton(
                 heroTag: 'button1',
+                backgroundColor:
+                    selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+                icon: const Icon(Icons.home_outlined, color: Colors.white),
+                text: selectedIndex == 0 ? "Home" : "",
+                textColor: Colors.white,
                 onPressed: () {
                   setState(() {
                     selectedIndex = 0;
                   });
                 },
-                backgroundColor:
-                    selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
-                icon: const Icon(Icons.home_outlined, color: Colors.white),
-                label: titleText(
-                    text: selectedIndex == 0 ? "Home" : "",
-                    color: Colors.white),
               ),
               FloatingActionButton.extended(
                 heroTag: 'button2',
@@ -130,23 +130,4 @@ class _TabScreensState extends State<TabScreens> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: selectedIndex == 0 ? const Dashboard() : const Practice());
   }
-}
-
-Widget bottomNavButton(
-    {required String heroTag,
-    required Color backgroundColor,
-    required Icon icon,
-    required String text,
-    required Color textColor,
-    required Function() onPressed}) {
-  return FloatingActionButton.extended(
-    heroTag: heroTag,
-    onPressed: onPressed,
-    backgroundColor: backgroundColor,
-    icon: const Icon(Icons.article_outlined, color: Colors.white),
-    label: titleText(
-      text: text,
-      color: textColor,
-    ),
-  );
 }
