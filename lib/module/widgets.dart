@@ -19,8 +19,8 @@ Widget titleText(
     padding: EdgeInsets.only(
         top: topPadding,
         bottom: bottomPadding,
-        right: startPadding,
-        left: endPadding),
+        right: endPadding,
+        left: startPadding),
     child: Text(
       text,
       style: TextStyle(
