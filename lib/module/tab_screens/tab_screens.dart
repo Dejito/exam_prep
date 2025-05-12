@@ -55,7 +55,7 @@ class _TabScreensState extends State<TabScreens> {
                   ),
                   child: CircleAvatar(
                     backgroundColor: selectedIndex == 0
-                        ? Colors.black
+                        ? Colors.white
                         : Colors.grey.shade800,
                     radius: 24,
                     child: IconButton(
