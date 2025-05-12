@@ -42,9 +42,16 @@ Widget practiceGridView() {
     shrinkWrap: true,
     physics: const NeverScrollableScrollPhysics(),
     children: practiceGridModelItems.map((item) {
-      return practiceGridCard(
-        label: item.label,
-        icon: item.iconData,
+      return GestureDetector(
+        onTap: (){
+
+        },
+        child: practiceGridCard(
+          label: item.label,
+          icon: item.iconData,
+          foregroundColor: item.id == 1 ? Colors.black : Colors.greenAccent,
+          backgroundColor: item.id == 1 ? Colors.greenAccent : Colors.grey.shade700, textColor: item.id == 1 ? Colors.black : Colors.white,
+        ),
       );
     }).toList(),
   );
@@ -53,12 +60,17 @@ Widget practiceGridView() {
 Widget practiceGridCard({
   required String label,
   required IconData icon,
+  required Color foregroundColor,
+  required Color backgroundColor,
+  required Color textColor,
+
 }) {
   return Container(
     height: 160,
     padding: const EdgeInsets.all(16.0),
     decoration: BoxDecoration(
-      color: Colors.grey.shade700,
+      color: backgroundColor,
+      // Colors.grey.shade700,
       borderRadius: BorderRadius.circular(25.0),
     ),
     child: Column(
@@ -66,13 +78,14 @@ Widget practiceGridCard({
       children: [
         Icon(
           icon,
-          color: Colors.greenAccent,
+          color: foregroundColor,
+          // Colors.greenAccent,
         ),
         const SizedBox(
           height: 18.0,
         ),
         titleText(
-            text: label, color: Colors.white, fontWeight: FontWeight.w600),
+            text: label, color: textColor, fontWeight: FontWeight.w600),
       ],
     ),
   );
