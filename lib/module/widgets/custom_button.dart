@@ -19,7 +19,6 @@ Widget customButton({
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           titleText(
             text: text,
@@ -28,9 +27,6 @@ Widget customButton({
             color: textColor,
             textAlign: TextAlign.justify,
           ),
-          // SizedBox(
-          //   width: 2,
-          // ),
           const Icon(
             CupertinoIcons.arrow_up_right,
             color: Colors.white,

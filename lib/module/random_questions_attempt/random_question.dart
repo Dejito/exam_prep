@@ -1,11 +1,9 @@
 import 'package:exam_prep/constant/app_colors.dart';
 import 'package:exam_prep/module/random_questions_attempt/random_questions_widget.dart';
-import 'package:exam_prep/module/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
 import '../tab_screens/tab_screens_widget.dart';
-import '../widgets/custom_button.dart';
 
 class RandomQuestion extends StatelessWidget {
   static const route = 'random_question';
@@ -19,9 +17,9 @@ class RandomQuestion extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: Container(
-          margin:  const EdgeInsets.only(left: 6),// Border width
+          margin:  const EdgeInsets.only(left: 6),
           decoration: const BoxDecoration(
-            color: Colors.black, // Border color
+            color: Colors.black,
             shape: BoxShape.circle,
           ),
           child: CircleAvatar(
@@ -34,7 +32,6 @@ class RandomQuestion extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.of(context).pop();
-                // Handle press
               },
             ),
           ),
@@ -55,9 +52,9 @@ class RandomQuestion extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(2), // Border width
+                  padding: const EdgeInsets.all(2),
                   decoration: const BoxDecoration(
-                    color: Colors.black, // Border color
+                    color: Colors.black,
                     shape: BoxShape.circle,
                   ),
                   child: CircleAvatar(

@@ -1,4 +1,3 @@
-import 'package:exam_prep/module/dashboard/dashboard.dart';
 import 'package:exam_prep/module/random_questions_attempt/random_question.dart';
 import 'package:exam_prep/module/tab_screens/tab_screens.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         title: 'Exam Prep',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         home: const TabScreens(),

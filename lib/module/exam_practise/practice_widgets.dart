@@ -70,7 +70,6 @@ Widget practiceGridCard({
     padding: const EdgeInsets.all(16.0),
     decoration: BoxDecoration(
       color: backgroundColor,
-      // Colors.grey.shade700,
       borderRadius: BorderRadius.circular(25.0),
     ),
     child: Column(
@@ -79,7 +78,6 @@ Widget practiceGridCard({
         Icon(
           icon,
           color: foregroundColor,
-          // Colors.greenAccent,
         ),
         const SizedBox(
           height: 18.0,
