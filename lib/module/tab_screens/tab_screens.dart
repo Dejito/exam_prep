@@ -7,6 +7,7 @@ import '../../constant/app_assets.dart';
 import '../widgets/custom_text_widget.dart';
 
 class TabScreens extends StatefulWidget {
+  static const route = '/tab_screen';
   const TabScreens({super.key});
 
   @override

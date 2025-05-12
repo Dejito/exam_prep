@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         home: const TabScreens(),
         routes: {
+          TabScreens.route: (route) => const TabScreens(),
           RandomQuestion.route: (route) => const RandomQuestion()
         },
     );
