@@ -9,7 +9,7 @@ Widget subjectOfferedWidget({
   String bottomText = "Exam Preparation",
   bool isDashboardScreen = true,
   Color topTextColor = Colors.black,
-  double bottomFontSize = 32,
+  double bottomFontSize = 35,
   Color bottomTextColor = Colors.black54,
 }) {
   return Container(

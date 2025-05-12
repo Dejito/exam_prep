@@ -28,7 +28,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   bottomText: "type of question",
                   topTextColor: Colors.white,
                   bottomTextColor: Colors.grey,
-                  bottomFontSize: 30,
+                  bottomFontSize: 28,
                   isDashboardScreen: false),
               practiceGridView(onClicked: () {
                 Navigator.of(context).pushNamed(RandomQuestion.route);

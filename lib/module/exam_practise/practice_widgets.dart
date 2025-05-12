@@ -7,7 +7,7 @@ import '../widgets/custom_text_widget.dart';
 Widget mistakesPracticeCard() {
   return Container(
     margin: const EdgeInsets.only(top: 5),
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
     decoration: const BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(24)),
       color: Colors.cyan,
@@ -17,17 +17,19 @@ Widget mistakesPracticeCard() {
       children: [
         titleText(
           text: "Mistakes practice",
-          fontSize: 22,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
           textAlign: TextAlign.start,
-          bottomPadding: 12
+          bottomPadding: 8
         ),
         titleText(
           text:
               "Practice more the very exam exercises which you're doing worse. You're gonna deal with it",
+          fontSize: 13,
           fontWeight: FontWeight.w500,
           color: Colors.black54,
-          endPadding: 20
+          textAlign: TextAlign.start,
+          endPadding: 8
         )
       ],
     ),
