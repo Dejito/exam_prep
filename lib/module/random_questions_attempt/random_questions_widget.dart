@@ -7,7 +7,7 @@ import '../widgets/custom_text_widget.dart';
 Widget randomQuestionsHeader(
     {required String subject, required int questionNumber}) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -42,7 +42,7 @@ Widget questionsAndOptionsListView() {
                 child: titleText(
                   text: questionsAndAnswersRepo[i].question,
                   color: Colors.grey.shade300,
-                  fontSize: 20,
+                  fontSize: 18,
                   textAlign: TextAlign.start,
                   bottomPadding: 16,
                 ),
@@ -87,7 +87,7 @@ Widget questionItemCard({
                 Expanded(
                   child: titleText(
                     text: option,
-                    fontSize: 17,
+                    fontSize: 16,
                     color: Colors.grey.shade500,
                     textAlign: TextAlign.start
                   ),
@@ -105,8 +105,8 @@ Widget questionItemCard({
 
 Widget randomQuestionBottomButton() {
   return Container(
-    margin: const EdgeInsets.only(top: 15),
-    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+    margin: const EdgeInsets.only(top: 10),
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
     decoration: const BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(50)),
       color: Colors.cyan,
