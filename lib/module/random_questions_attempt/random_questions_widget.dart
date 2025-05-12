@@ -36,10 +36,13 @@ Widget questionsAndOptionsListView() {
               children: [
                 titleText(
                     text: questionsAndAnswersRepo[i].question,
+                    color: Colors.white,
                     bottomPadding: 12),
                 questionItemCard(
                     radioButtonValue: questionsAndAnswersRepo[i].options[i],
-                    optionText: questionsAndAnswersRepo[i].options[i]),
+                    optionText: questionsAndAnswersRepo[i].options[i],
+                  listLength: questionsAndAnswersRepo.length,
+                ),
               ],
             );
           },
@@ -55,14 +58,17 @@ Widget questionsAndOptionsListView() {
 Widget questionItemCard(
     {required String radioButtonValue,
     groupValue,
-    required String optionText}) {
+    required String optionText,
+    required int listLength,
+
+    }) {
   return Container(
     child: Column(
       children: [
         Row(
           children: [
             Radio<String>(
-              focusColor: Colors.black,
+              focusColor: Colors.white,
               activeColor: Colors.black,
               value: radioButtonValue,
               groupValue: groupValue,
@@ -70,7 +76,11 @@ Widget questionItemCard(
                 groupValue = selectedOption;
               },
             ),
-            titleText(text: optionText),
+            // answersWidget
+            ...List.generate(listLength,
+                    (index){
+              return titleText(text: optionText);
+            })
           ],
         ),
         Container(

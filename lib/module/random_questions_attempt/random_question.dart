@@ -76,7 +76,8 @@ class RandomQuestion extends StatelessWidget {
       ),
       body: Column(
         children: [
-          randomQuestionsHeader(subject: 'Economics', questionNumber: 6)
+          randomQuestionsHeader(subject: 'Economics', questionNumber: 6),
+          questionsAndOptionsListView()
         ],
       ),
     );
