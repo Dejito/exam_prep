@@ -1,3 +1,4 @@
+import 'package:exam_prep/constant/app_colors.dart';
 import 'package:exam_prep/module/random_questions_attempt/random_questions_widget.dart';
 import 'package:exam_prep/module/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -87,33 +88,25 @@ class RandomQuestion extends StatelessWidget {
           children: [
             bottomNavButton(
               heroTag: 'button1',
-              backgroundColor: Colors.grey.shade800,
+              backgroundColor: AppColors.customGrey,
               icon: Icons.home_outlined,
-              text: selectedIndex == 0 ? "Home" : "",
-              onPressed: () {
-                setState(() {
-                  selectedIndex = 0;
-                });
-              },
+              text: "",
+              onPressed: () {},
             ),
             bottomNavButton(
               heroTag: 'button2',
-              backgroundColor:
-              selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+              backgroundColor: AppColors.customGrey,
               icon: Icons.school_outlined,
               text: "",
               onPressed: () {},
             ),
             bottomNavButton(
               heroTag: 'button3',
-              backgroundColor:
-              selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+              backgroundColor: AppColors.customGrey,
               icon: Icons.article_outlined,
-              text: selectedIndex == 2 ? "Practice" : "",
+              text: "Practice",
               onPressed: () {
-                setState(() {
-                  selectedIndex = 2;
-                });
+
               },
             ),
           ],

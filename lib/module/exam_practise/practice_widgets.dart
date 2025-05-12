@@ -1,6 +1,7 @@
 import 'package:exam_prep/models/practice_grid_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../constant/app_colors.dart';
 import '../widgets/custom_text_widget.dart';
 
 Widget mistakesPracticeCard() {
@@ -49,7 +50,7 @@ Widget practiceGridView({required Function() onClicked}) {
           label: item.label,
           icon: item.iconData,
           foregroundColor: item.id == 1 ? Colors.black : Colors.greenAccent,
-          backgroundColor: item.id == 1 ? Colors.greenAccent : const Color(0xFF232323), textColor: item.id == 1 ? Colors.black : Colors.white,
+          backgroundColor: item.id == 1 ? Colors.greenAccent : AppColors.customGrey, textColor: item.id == 1 ? Colors.black : Colors.white,
         ),
       );
     }).toList(),

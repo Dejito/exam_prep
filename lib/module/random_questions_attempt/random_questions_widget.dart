@@ -1,6 +1,7 @@
 import 'package:exam_prep/models/question_answers_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../constant/app_colors.dart';
 import '../widgets/custom_text_widget.dart';
 
 Widget randomQuestionsHeader(
@@ -73,7 +74,7 @@ Widget questionItemCard({
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: const Color(0xFF232323),
+              color: AppColors.customGrey,
             ),
             child: Row(
               children: [
