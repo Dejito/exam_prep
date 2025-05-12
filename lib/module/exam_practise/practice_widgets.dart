@@ -2,6 +2,35 @@ import 'package:exam_prep/models/practice_grid_model.dart';
 import 'package:exam_prep/module/widgets.dart';
 import 'package:flutter/material.dart';
 
+Widget mistakesPracticeCard() {
+  return Container(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(24)),
+      color: Colors.cyan,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        titleText(
+          text: "Mistakes practice",
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          textAlign: TextAlign.start,
+          bottomPadding: 12
+        ),
+        titleText(
+          text:
+              "Practice more the very exam exercises which you're doing worse. You're gonna deal with it",
+          fontWeight: FontWeight.w500,
+          color: Colors.black54,
+          endPadding: 20
+        )
+      ],
+    ),
+  );
+}
+
 Widget practiceGridView() {
   return GridView(
     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -29,7 +58,7 @@ Widget practiceGridCard({
     height: 160,
     padding: const EdgeInsets.all(16.0),
     decoration: BoxDecoration(
-      color: Colors.grey,
+      color: Colors.grey.shade700,
       borderRadius: BorderRadius.circular(25.0),
     ),
     child: Column(
@@ -37,11 +66,13 @@ Widget practiceGridCard({
       children: [
         Icon(
           icon,
+          color: Colors.greenAccent,
         ),
         const SizedBox(
           height: 18.0,
         ),
-        titleText(text: label),
+        titleText(
+            text: label, color: Colors.white, fontWeight: FontWeight.w600),
       ],
     ),
   );

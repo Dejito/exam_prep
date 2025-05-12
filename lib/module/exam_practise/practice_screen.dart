@@ -21,7 +21,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,8 +33,10 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 bottomFontSize: 30,
                 isDashboardScreen: false
               ),
-              const SizedBox(height: 20,),
-              practiceGridView()
+              const SizedBox(height: 25,),
+              practiceGridView(),
+              const SizedBox(height: 5,),
+              mistakesPracticeCard()
             ],
           ),
         ),

@@ -11,8 +11,8 @@ class PracticeGridModel {
 
 const List<PracticeGridModel> practiceGridModelItems = [
   PracticeGridModel("1", Icons.recycling, "Random"),
-  PracticeGridModel("2", Icons.handshake_sharp, "Random"),
-  PracticeGridModel("3", Icons.recycling, "Random"),
-  PracticeGridModel("4", Icons.list, "Random"),
+  PracticeGridModel("2", Icons.handshake_sharp, "Exam Number"),
+  PracticeGridModel("3", Icons.recycling, "Topic"),
+  PracticeGridModel("4", Icons.list, "In a Row"),
 ];
 
