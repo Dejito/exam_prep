@@ -60,7 +60,7 @@ class RandomQuestion extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: Colors.grey.shade800,
                     radius: 24,
-                    child:  Icon(
+                    child:  const Icon(
                         Icons.apps,
                         color:Colors.white,
                       ),
@@ -74,11 +74,14 @@ class RandomQuestion extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: [
-          randomQuestionsHeader(subject: 'Economics', questionNumber: 6),
-          questionsAndOptionsListView()
-        ],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 6),
+        child: Column(
+          children: [
+            randomQuestionsHeader(subject: 'Economics', questionNumber: 6),
+            questionsAndOptionsListView()
+          ],
+        ),
       ),
     );
   }

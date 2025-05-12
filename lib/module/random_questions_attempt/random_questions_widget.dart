@@ -6,7 +6,7 @@ import '../widgets/custom_text_widget.dart';
 Widget randomQuestionsHeader(
     {required String subject, required int questionNumber}) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
+    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -26,34 +26,37 @@ Widget randomQuestionsHeader(
 }
 
 Widget questionsAndOptionsListView() {
-  return Container(
-    child: Column(
-      children: [
-        ListView.builder(
-          itemCount: questionsAndAnswersRepo.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, i) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                titleText(
+  return Column(
+    children: [
+      ListView.builder(
+        itemCount: questionsAndAnswersRepo.length,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (context, i) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6),
+                child: titleText(
                   text: questionsAndAnswersRepo[i].question,
-                  color: Colors.white,
-                  bottomPadding: 12,
+                  color: Colors.grey.shade300,
+                  fontSize: 20,
+                  textAlign: TextAlign.start,
+                  bottomPadding: 16,
                 ),
-                questionItemCard(
-                  groupValue: "",
-                  options: questionsAndAnswersRepo[i].options,
-                  onChanged: (value) {
-                  },
-                ),
-              ],
-            );
-          },
-        )
-      ],
-    ),
+              ),
+              questionItemCard(
+                groupValue: "",
+                options: questionsAndAnswersRepo[i].options,
+                onChanged: (value) {
+                },
+              ),
+            ],
+          );
+        },
+      )
+    ],
   );
 }
 
@@ -67,10 +70,10 @@ Widget questionItemCard({
       return Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Color(0xFF232323),
+              color: const Color(0xFF232323),
             ),
             child: Row(
               children: [
@@ -83,7 +86,9 @@ Widget questionItemCard({
                 Expanded(
                   child: titleText(
                     text: option,
-                    color: Colors.white,
+                    fontSize: 17,
+                    color: Colors.grey.shade500,
+                    textAlign: TextAlign.start
                   ),
                 ),
               ],
