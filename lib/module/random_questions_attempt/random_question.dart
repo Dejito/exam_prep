@@ -10,17 +10,17 @@ class RandomQuestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: Container(
-          padding: const EdgeInsets.all(2), // Border width
+          margin:  const EdgeInsets.only(left: 6),// Border width
           decoration: const BoxDecoration(
             color: Colors.black, // Border color
             shape: BoxShape.circle,
           ),
           child: CircleAvatar(
             backgroundColor: Colors.grey.shade800,
-            // radius: 24,
             child: IconButton(
               icon: const Icon(
                 Icons.chevron_left,
@@ -34,6 +34,7 @@ class RandomQuestion extends StatelessWidget {
             ),
           ),
         ),
+
         actions: [
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.25,
@@ -45,7 +46,7 @@ class RandomQuestion extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 25,
                     backgroundImage:
-                    AssetImage(AppImages.userImage), // Or use NetworkImage
+                    AssetImage(AppImages.userImage),
                   ),
                 ),
                 Container(
@@ -57,15 +58,10 @@ class RandomQuestion extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: Colors.grey.shade800,
                     radius: 24,
-                    child: IconButton(
-                      icon: const Icon(
+                    child:  Icon(
                         Icons.apps,
                         color:Colors.white,
                       ),
-                      onPressed: () {
-                        // Handle press
-                      },
-                    ),
                   ),
                 ),
               ],
@@ -77,7 +73,9 @@ class RandomQuestion extends StatelessWidget {
         ],
       ),
       body: Column(
+        children: [
 
+        ],
       ),
     );
   }

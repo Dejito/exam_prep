@@ -43,15 +43,15 @@ class _TabScreensState extends State<TabScreens> {
                   child: CircleAvatar(
                     radius: 25,
                     backgroundImage:
-                        AssetImage(AppImages.userImage), // Or use NetworkImage
+                        AssetImage(AppImages.userImage),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(2), // Border width
+                  padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     color: selectedIndex == 0
                         ? const Color(0xFF79F3A1)
-                        : Colors.black, // Border color
+                        : Colors.black,
                     shape: BoxShape.circle,
                   ),
                   child: CircleAvatar(
@@ -64,9 +64,7 @@ class _TabScreensState extends State<TabScreens> {
                         Icons.apps,
                         color: selectedIndex == 0 ? Colors.black : Colors.white,
                       ),
-                      onPressed: () {
-                        // Handle press
-                      },
+                      onPressed: null,
                     ),
                   ),
                 ),
