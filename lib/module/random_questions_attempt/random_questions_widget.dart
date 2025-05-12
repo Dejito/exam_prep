@@ -101,3 +101,21 @@ Widget questionItemCard({
   );
 }
 
+
+Widget randomQuestionBottomButton() {
+  return Container(
+    margin: const EdgeInsets.only(top: 15),
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(50)),
+      color: Colors.cyan,
+    ),
+    child: titleText(
+      text: "Check The Answer",
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: Colors.black87,
+      textAlign: TextAlign.center,
+    ),
+  );
+}

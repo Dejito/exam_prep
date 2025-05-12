@@ -3,6 +3,7 @@ import 'package:exam_prep/module/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
+import '../widgets/custom_button.dart';
 
 class RandomQuestion extends StatelessWidget {
   static const route = 'random_question';
@@ -79,7 +80,8 @@ class RandomQuestion extends StatelessWidget {
         child: Column(
           children: [
             randomQuestionsHeader(subject: 'Economics', questionNumber: 6),
-            questionsAndOptionsListView()
+            questionsAndOptionsListView(),
+            randomQuestionBottomButton()
           ],
         ),
       ),
