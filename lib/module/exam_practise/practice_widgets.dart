@@ -50,7 +50,7 @@ Widget practiceGridView() {
           label: item.label,
           icon: item.iconData,
           foregroundColor: item.id == 1 ? Colors.black : Colors.greenAccent,
-          backgroundColor: item.id == 1 ? Colors.greenAccent : Colors.grey.shade700, textColor: item.id == 1 ? Colors.black : Colors.white,
+          backgroundColor: item.id == 1 ? Colors.greenAccent : const Color(0xFF232323), textColor: item.id == 1 ? Colors.black : Colors.white,
         ),
       );
     }).toList(),
