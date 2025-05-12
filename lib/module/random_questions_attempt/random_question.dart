@@ -3,6 +3,7 @@ import 'package:exam_prep/module/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
+import '../tab_screens/tab_screens_widget.dart';
 import '../widgets/custom_button.dart';
 
 class RandomQuestion extends StatelessWidget {
@@ -75,6 +76,50 @@ class RandomQuestion extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: const BottomAppBar(
+        color: Colors.transparent,
+        child: SizedBox(height: 0),
+      ),
+      floatingActionButton: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.65,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            bottomNavButton(
+              heroTag: 'button1',
+              backgroundColor: Colors.grey.shade800,
+              icon: Icons.home_outlined,
+              text: selectedIndex == 0 ? "Home" : "",
+              onPressed: () {
+                setState(() {
+                  selectedIndex = 0;
+                });
+              },
+            ),
+            bottomNavButton(
+              heroTag: 'button2',
+              backgroundColor:
+              selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+              icon: Icons.school_outlined,
+              text: "",
+              onPressed: () {},
+            ),
+            bottomNavButton(
+              heroTag: 'button3',
+              backgroundColor:
+              selectedIndex == 0 ? Colors.black : Colors.grey.shade800,
+              icon: Icons.article_outlined,
+              text: selectedIndex == 2 ? "Practice" : "",
+              onPressed: () {
+                setState(() {
+                  selectedIndex = 2;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 6),
         child: Column(
