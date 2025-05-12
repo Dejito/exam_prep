@@ -1,3 +1,5 @@
+import 'package:exam_prep/module/random_questions_attempt/random_questions_widget.dart';
+import 'package:exam_prep/module/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
@@ -74,7 +76,7 @@ class RandomQuestion extends StatelessWidget {
       ),
       body: Column(
         children: [
-
+          randomQuestionsHeader(subject: 'Economics', questionNumber: 6)
         ],
       ),
     );
