@@ -23,9 +23,7 @@ class _DashboardState extends State<Dashboard> {
             children: [
               subjectOfferedWidget(topText: "Social Studies"),
               scoreBoard(score: 58),
-              const SizedBox(height: 20),
               subjectOverviewCard(),
-              const SizedBox(height: 5),
               testSummaryCard()
             ],
           ),

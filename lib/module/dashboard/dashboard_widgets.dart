@@ -49,8 +49,9 @@ Widget subjectOfferedWidget({
 }
 
 Widget scoreBoard({required int score}) {
-  return Padding(
+  return Container(
     padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    margin: const EdgeInsets.only(bottom: 20),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -161,6 +162,7 @@ Widget subjectOverviewCardItem({
 
 Widget testSummaryCard() {
   return Container(
+    margin: const EdgeInsets.only(top: 5),
     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 18),
     decoration: BoxDecoration(
       color: Colors.white,

@@ -6,6 +6,7 @@ import '../widgets/custom_text_widget.dart';
 
 Widget mistakesPracticeCard() {
   return Container(
+    margin: const EdgeInsets.only(top: 5),
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
     decoration: const BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(24)),

@@ -33,9 +33,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
               practiceGridView(onClicked: () {
                 Navigator.of(context).pushNamed(RandomQuestion.route);
               }),
-              const SizedBox(
-                height: 5,
-              ),
               mistakesPracticeCard()
             ],
           ),
