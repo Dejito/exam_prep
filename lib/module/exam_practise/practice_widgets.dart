@@ -32,7 +32,7 @@ Widget mistakesPracticeCard() {
   );
 }
 
-Widget practiceGridView() {
+Widget practiceGridView({required Function() onClicked}) {
   return GridView(
     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 200,
@@ -44,9 +44,7 @@ Widget practiceGridView() {
     physics: const NeverScrollableScrollPhysics(),
     children: practiceGridModelItems.map((item) {
       return GestureDetector(
-        onTap: (){
-
-        },
+        onTap: item.id == 1 ? onClicked : null,
         child: practiceGridCard(
           label: item.label,
           icon: item.iconData,
