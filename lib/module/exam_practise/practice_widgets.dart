@@ -1,6 +1,7 @@
 import 'package:exam_prep/models/practice_grid_model.dart';
-import 'package:exam_prep/module/widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/custom_text_widget.dart';
 
 Widget mistakesPracticeCard() {
   return Container(

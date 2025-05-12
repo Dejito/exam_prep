@@ -26,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
               scoreBoard(score: 58),
               const SizedBox(height: 20),
               subjectOverviewCard(),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               testSummaryCard()
             ],
           ),

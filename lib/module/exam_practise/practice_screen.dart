@@ -2,9 +2,6 @@ import 'package:exam_prep/module/dashboard/dashboard_widgets.dart';
 import 'package:exam_prep/module/exam_practise/practice_widgets.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant/app_assets.dart';
-import '../widgets.dart';
-
 class PracticeScreen extends StatefulWidget {
   const PracticeScreen({super.key});
 

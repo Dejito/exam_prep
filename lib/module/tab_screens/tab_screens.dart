@@ -1,10 +1,10 @@
 import 'package:exam_prep/module/dashboard/dashboard.dart';
 import 'package:exam_prep/module/exam_practise/practice_screen.dart';
 import 'package:exam_prep/module/tab_screens/tab_screens_widget.dart';
-import 'package:exam_prep/module/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
+import '../widgets/custom_text_widget.dart';
 
 class TabScreens extends StatefulWidget {
   const TabScreens({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets.dart';
+import 'custom_text_widget.dart';
 
 Widget customButton({
   required String text,
@@ -31,7 +31,7 @@ Widget customButton({
           // SizedBox(
           //   width: 2,
           // ),
-          Icon(
+          const Icon(
             CupertinoIcons.arrow_up_right,
             color: Colors.white,
             size: 20,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets.dart';
+import '../widgets/custom_text_widget.dart';
 
 
 Widget bottomNavButton(

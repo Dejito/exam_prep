@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 
 Widget titleText(
@@ -24,8 +23,8 @@ Widget titleText(
     child: Text(
       text,
       style: TextStyle(
-        fontSize: fontSize,
-        fontWeight: fontWeight,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
           color: color,
           fontStyle: fontStyle
       ),

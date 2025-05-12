@@ -2,14 +2,14 @@ import 'package:exam_prep/module/widgets/custom_button.dart';
 import 'package:exam_prep/module/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
 import '../../models/subjects_model.dart';
-import '../widgets.dart';
+import '../widgets/custom_text_widget.dart';
 
 Widget subjectOfferedWidget({
   required String topText,
   String bottomText = "Exam Preparation",
   bool isDashboardScreen = true,
   Color topTextColor = Colors.black,
-  double bottomFontSize = 40,
+  double bottomFontSize = 36,
   Color bottomTextColor = Colors.black54,
 }) {
   return Padding(
@@ -126,7 +126,7 @@ Widget subjectOverviewCardItem({
     onTap: onTap,
     splashColor: Colors.grey,
     child: Container(
-      height: 160,
+      height: 140,
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -159,7 +159,7 @@ Widget subjectOverviewCardItem({
 
 Widget testSummaryCard() {
   return Container(
-    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
+    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 18),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(25.0),
