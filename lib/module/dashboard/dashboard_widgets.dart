@@ -12,8 +12,9 @@ Widget subjectOfferedWidget({
   double bottomFontSize = 32,
   Color bottomTextColor = Colors.black54,
 }) {
-  return Padding(
+  return Container(
     padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    margin: const EdgeInsets.only(bottom: 20.0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -30,9 +31,9 @@ Widget subjectOfferedWidget({
           children: [
             titleText(
               text: bottomText,
-                fontSize: bottomFontSize,
-                color: bottomTextColor,
-                fontWeight: FontWeight.bold,
+              fontSize: bottomFontSize,
+              color: bottomTextColor,
+              fontWeight: FontWeight.bold,
             ),
             if (!isDashboardScreen)
               const Icon(
@@ -58,16 +59,18 @@ Widget scoreBoard({required int score}) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               richText(
-                  unformattedText: score.toString(),
-                  formattedText: " /100",
-                  formattedColor: Colors.black54,
-                  fontWeight: FontWeight.w700,
-                  formattedFontSize: 28,
-                  unformattedFontSize: 35),
+                unformattedText: score.toString(),
+                formattedText: " /100",
+                formattedColor: Colors.black54,
+                fontWeight: FontWeight.w700,
+                formattedFontSize: 26,
+                unformattedFontSize: 35,
+              ),
               titleText(
                 text: "Your recent score",
                 color: Colors.black54,
-                fontSize: 20,
+                fontSize: 16,
+                textAlign: TextAlign.start,
                 fontWeight: FontWeight.w700,
               )
             ],
@@ -100,7 +103,7 @@ Widget subjectOverviewCard() {
           onTap: () {},
         ),
       ),
-      const SizedBox(width: 16.0),
+      const SizedBox(width: 4.0),
       Expanded(
         child: subjectOverviewCardItem(
           formattedColorText: " /16 questions",
@@ -240,4 +243,3 @@ Widget subjectsListView() {
     ),
   );
 }
-

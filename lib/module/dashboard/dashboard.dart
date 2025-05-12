@@ -22,7 +22,6 @@ class _DashboardState extends State<Dashboard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               subjectOfferedWidget(topText: "Social Studies"),
-              const SizedBox(height: 20),
               scoreBoard(score: 58),
               const SizedBox(height: 20),
               subjectOverviewCard(),

@@ -30,9 +30,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   bottomTextColor: Colors.grey,
                   bottomFontSize: 30,
                   isDashboardScreen: false),
-              const SizedBox(
-                height: 25,
-              ),
               practiceGridView(onClicked: () {
                 Navigator.of(context).pushNamed(RandomQuestion.route);
               }),
