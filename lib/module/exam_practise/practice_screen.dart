@@ -1,4 +1,5 @@
 import 'package:exam_prep/module/dashboard/dashboard_widgets.dart';
+import 'package:exam_prep/module/exam_practise/practice_widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_assets.dart';
@@ -31,7 +32,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 bottomTextColor: Colors.grey,
                 bottomFontSize: 30,
                 isDashboardScreen: false
-              )
+              ),
+              const SizedBox(height: 20,),
+              practiceGridView()
             ],
           ),
         ),
