@@ -13,12 +13,12 @@ Widget randomQuestionsHeader(
       children: [
         titleText(
           text: subject,
-          fontSize: 28,
+          fontSize: 26,
           color: Colors.greenAccent,
         ),
         titleText(
           text: '#$questionNumber',
-          fontSize: 28,
+          fontSize: 26,
           color: Colors.greenAccent,
         ),
       ],
@@ -87,7 +87,7 @@ Widget questionItemCard({
                 Expanded(
                   child: titleText(
                     text: option,
-                    fontSize: 16,
+                    fontSize: 15,
                     color: Colors.grey.shade500,
                     textAlign: TextAlign.start
                   ),

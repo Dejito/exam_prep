@@ -9,7 +9,7 @@ Widget subjectOfferedWidget({
   String bottomText = "Exam Preparation",
   bool isDashboardScreen = true,
   Color topTextColor = Colors.black,
-  double bottomFontSize = 36,
+  double bottomFontSize = 32,
   Color bottomTextColor = Colors.black54,
 }) {
   return Padding(
@@ -19,7 +19,7 @@ Widget subjectOfferedWidget({
       children: [
         titleText(
           text: topText,
-          fontSize: 40,
+          fontSize: 32,
           fontWeight: FontWeight.w600,
           textAlign: TextAlign.start,
           color: topTextColor,
@@ -33,7 +33,6 @@ Widget subjectOfferedWidget({
                 fontSize: bottomFontSize,
                 color: bottomTextColor,
                 fontWeight: FontWeight.bold,
-              // bottomPadding: 12
             ),
             if (!isDashboardScreen)
               const Icon(
