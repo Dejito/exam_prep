@@ -1,5 +1,4 @@
 import 'package:exam_prep/models/question_answers_model.dart';
-import 'package:exam_prep/module/random_questions_attempt/random_question.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_text_widget.dart';
@@ -31,63 +30,69 @@ Widget questionsAndOptionsListView() {
     child: Column(
       children: [
         ListView.builder(
+          itemCount: questionsAndAnswersRepo.length,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, i) {
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 titleText(
-                    text: questionsAndAnswersRepo[i].question,
-                    color: Colors.white,
-                    bottomPadding: 12),
+                  text: questionsAndAnswersRepo[i].question,
+                  color: Colors.white,
+                  bottomPadding: 12,
+                ),
                 questionItemCard(
-                    radioButtonValue: questionsAndAnswersRepo[i].options[i],
-                    optionText: questionsAndAnswersRepo[i].options[i],
-                  listLength: questionsAndAnswersRepo.length,
+                  groupValue: "",
+                  options: questionsAndAnswersRepo[i].options,
+                  onChanged: (value) {
+                  },
                 ),
               ],
             );
           },
-          itemCount: questionsAndAnswersRepo.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
         )
       ],
     ),
   );
 }
 
-Widget questionItemCard(
-    {required String radioButtonValue,
-    groupValue,
-    required String optionText,
-    required int listLength,
-
-    }) {
-  return Container(
-    child: Column(
-      children: [
-        Row(
-          children: [
-            Radio<String>(
-              focusColor: Colors.white,
-              activeColor: Colors.black,
-              value: radioButtonValue,
-              groupValue: groupValue,
-              onChanged: (selectedOption) {
-                groupValue = selectedOption;
-              },
+Widget questionItemCard({
+  required String? groupValue,
+  required List<dynamic> options,
+  required Function(String?) onChanged,
+}) {
+  return Column(
+    children: options.map((option) {
+      return Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Color(0xFF232323),
             ),
-            // answersWidget
-            ...List.generate(listLength,
-                    (index){
-              return titleText(text: optionText);
-            })
-          ],
-        ),
-        Container(
-          height: 5,
-          color: Colors.transparent,
-        ),
-      ],
-    ),
+            child: Row(
+              children: [
+                Radio<String>(
+                  value: option,
+                  groupValue: groupValue,
+                  onChanged: onChanged,
+                  activeColor: Colors.black,
+                ),
+                Expanded(
+                  child: titleText(
+                    text: option,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(color: Colors.transparent,height: 5,)
+        ],
+      );
+    }).toList(),
   );
 }
+
