@@ -6,7 +6,7 @@ class QuestionAnswersModel {
   QuestionAnswersModel({required this.question, required this.options});
 }
 
-List<QuestionAnswersModel> questionsRepo = [
+List<QuestionAnswersModel> questionsAndAnswersRepo = [
   QuestionAnswersModel(
     question:
         "Select the correct judgement about the global economy from the list below",

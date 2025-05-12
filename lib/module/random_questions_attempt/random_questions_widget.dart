@@ -1,19 +1,23 @@
+import 'package:exam_prep/models/question_answers_model.dart';
 import 'package:exam_prep/module/random_questions_attempt/random_question.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_text_widget.dart';
 
-Widget randomQuestionsHeader({required String subject, required int questionNumber}){
+Widget randomQuestionsHeader(
+    {required String subject, required int questionNumber}) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        titleText(text: subject,
+        titleText(
+          text: subject,
           fontSize: 28,
           color: Colors.greenAccent,
         ),
-        titleText(text: '#$questionNumber',
+        titleText(
+          text: '#$questionNumber',
           fontSize: 28,
           color: Colors.greenAccent,
         ),
@@ -26,18 +30,34 @@ Widget questionsAndOptionsListView() {
   return Container(
     child: Column(
       children: [
-        titleText(text: "Select the correct judgment about the global economy from the list below.",
-        bottomPadding: 12
+        ListView.builder(
+          itemBuilder: (context, i) {
+            return Column(
+              children: [
+                titleText(
+                    text: questionsAndAnswersRepo[i].question,
+                    bottomPadding: 12),
+                questionItemCard(
+                    radioButtonValue: questionsAndAnswersRepo[i].options[i],
+                    optionText: questionsAndAnswersRepo[i].options[i]),
+              ],
+            );
+          },
+          itemCount: questionsAndAnswersRepo.length,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
         )
       ],
     ),
-  )
+  );
 }
 
 Widget questionItemCard(
-    {required String radioButtonValue, groupValue, required String optionText}) {
+    {required String radioButtonValue,
+    groupValue,
+    required String optionText}) {
   return Container(
-    child:   Column(
+    child: Column(
       children: [
         Row(
           children: [
@@ -46,11 +66,11 @@ Widget questionItemCard(
               activeColor: Colors.black,
               value: radioButtonValue,
               groupValue: groupValue,
-              onChanged: (selectedOption){
+              onChanged: (selectedOption) {
                 groupValue = selectedOption;
               },
             ),
-            titleText(text: 'Ecode'),
+            titleText(text: optionText),
           ],
         ),
         Container(
